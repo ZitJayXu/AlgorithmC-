@@ -1,0 +1,30 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+//二分查找
+int Binaryfind(vector<int>&a, int left, int right, int key)
+{
+	int mid = (left+right )>> 1;
+	if (left>=right){
+		return -1;
+	}
+	 if (a[mid] > key) {
+	 return Binaryfind(a, left, mid, key);
+	}
+     if (a[mid] < key) {
+	   return Binaryfind(a, mid + 1,right, key);
+	 }
+	  else {
+	   return mid;
+	}
+	//return arr[mid] > key ? Binaryfind(arr, lo, mid, key) : Binaryfind(arr, mid + 1, ho, key);
+}
+int main()//测试
+{
+	vector<int>s{1,2,3,4,12,34,555,1234,5321}; 
+	cout << Binaryfind(s, 0, s.size(), 2) << endl;
+	cout << Binaryfind(s, 0, s.size(), 12) << endl;
+	cout << Binaryfind(s, 0, s.size(), 345) << endl;
+	cout << Binaryfind(s, 0, s.size(), 555) << endl;
+	return 0;
+}
