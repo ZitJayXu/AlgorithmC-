@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+//二分查找返回找到的数字的下标
 int Binaryfind(vector<int>& arr, int key) {
 	int left = 0, right = arr.size(),mid;
 	while (left < right) {
